@@ -7,20 +7,17 @@ router.use(express.json());
 
 const FILE_PATH = "./data/videos.json";
 
-// Read JSON file
 const readVideos = () => {
   const videosData = fs.readFileSync(FILE_PATH);
   const parsedVideos = JSON.parse(videosData);
   return parsedVideos;
 };
 
-// GET videos
 router.get("/", (req, res) => {
   const videos = readVideos();
   res.status(200).json(videos);
 });
 
-// GET videos by Id
 router.get("/:id", (req, res) => {
   const videos = readVideos();
   const videoId = req.params.id;
@@ -33,7 +30,6 @@ router.get("/:id", (req, res) => {
   res.status(200).json(video);
 });
 
-// POST video
 router.post("/", (req, res) => {
   const newVideoObj = req.body;
 
@@ -43,6 +39,8 @@ router.post("/", (req, res) => {
     channel: "Anita Yawson",
     image: "/images/upload-video-preview.jpg",
     description: newVideoObj.description,
+    views: "10",
+    likes: "4",
   };
 
   const videos = readVideos();
