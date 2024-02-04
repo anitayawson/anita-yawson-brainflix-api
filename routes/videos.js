@@ -36,10 +36,13 @@ router.get("/:id", (req, res) => {
 // POST video
 router.post("/", (req, res) => {
   const newVideoObj = req.body;
+
   const newVideo = {
     id: uuidv4(),
     title: newVideoObj.title,
-    content: newVideoObj.description,
+    channel: "Anita Yawson",
+    image: "/images/upload-video-preview.jpg",
+    description: newVideoObj.description,
   };
 
   const videos = readVideos();
