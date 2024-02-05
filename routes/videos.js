@@ -39,9 +39,10 @@ router.post("/", (req, res) => {
     channel: "Anita Yawson",
     image: "/images/upload-video-preview.jpg",
     description: newVideoObj.description,
-    views: "10",
-    likes: "4",
+    views: "12,023",
+    likes: "4,492",
     timestamp: Date.now(),
+    comments: [],
   };
 
   const videos = readVideos();
