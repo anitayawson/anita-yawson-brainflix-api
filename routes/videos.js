@@ -41,6 +41,7 @@ router.post("/", (req, res) => {
     description: newVideoObj.description,
     views: "10",
     likes: "4",
+    timestamp: Date.now(),
   };
 
   const videos = readVideos();
